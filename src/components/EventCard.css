@@ -1,0 +1,201 @@
+.adventure-card {
+  background-color: var(--color-cream-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+.adventure-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--color-olive-light);
+}
+
+.card-media-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background-color: var(--color-cream-subtle);
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.adventure-card:hover .card-image {
+  transform: scale(1.04);
+}
+
+.card-media-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(23, 60, 50, 0.25) 0%, transparent 40%, rgba(23, 60, 50, 0.4) 100%);
+}
+
+.card-badges-top {
+  position: absolute;
+  top: var(--space-12);
+  left: var(--space-12);
+  display: flex;
+  gap: var(--space-8);
+  z-index: 2;
+}
+
+.card-bookmark-btn {
+  position: absolute;
+  top: var(--space-12);
+  right: var(--space-12);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--color-forest);
+  border: 1px solid rgba(23, 60, 50, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(4px);
+}
+
+.card-bookmark-btn:hover {
+  background-color: #FFFFFF;
+  transform: scale(1.1);
+  color: var(--color-forest-dark);
+}
+
+.card-bookmark-btn.saved {
+  background-color: var(--color-forest);
+  color: var(--color-lime);
+  border-color: var(--color-forest);
+}
+
+.card-demo-tag {
+  position: absolute;
+  bottom: var(--space-8);
+  right: var(--space-12);
+  background-color: rgba(13, 38, 32, 0.85);
+  color: var(--color-cream);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+  backdrop-filter: blur(4px);
+}
+
+.card-body {
+  padding: var(--space-20);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-location {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: 0.82rem;
+  color: var(--color-olive);
+  font-weight: 600;
+  margin-bottom: var(--space-8);
+}
+
+.card-location span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-title {
+  font-size: 1.35rem;
+  margin-bottom: var(--space-8);
+}
+
+.card-title-link {
+  color: var(--color-forest-dark);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.card-title-link:hover {
+  color: var(--color-forest-light);
+}
+
+.card-description {
+  font-size: 0.9rem;
+  color: var(--color-charcoal-light);
+  line-height: 1.5;
+  margin-bottom: var(--space-16);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-meta-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-12);
+  padding: var(--space-12) 0;
+  margin-bottom: var(--space-16);
+  border-top: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: 0.8rem;
+  color: var(--color-charcoal);
+  font-weight: 500;
+}
+
+.meta-item svg {
+  color: var(--color-olive);
+}
+
+.card-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+}
+
+.card-price-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-olive);
+  font-weight: 700;
+}
+
+.price-value {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-forest);
+}
+
+.card-action-btn {
+  border-radius: var(--radius-full);
+}

@@ -1,0 +1,99 @@
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.timeline-day-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.day-badge-header {
+  display: flex;
+  align-items: center;
+}
+
+.day-pill {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background-color: var(--color-forest);
+  color: var(--color-lime);
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+}
+
+.timeline-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-item {
+  display: flex;
+  gap: var(--space-16);
+  position: relative;
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-forest);
+  border: 3px solid var(--color-lime);
+  margin-top: 4px;
+  z-index: 2;
+}
+
+.timeline-line {
+  flex: 1;
+  width: 2px;
+  background-color: var(--color-border);
+  margin: 4px 0;
+}
+
+.timeline-content {
+  flex: 1;
+  padding-bottom: var(--space-24);
+}
+
+.timeline-time {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-olive);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-4);
+}
+
+.timeline-title {
+  font-family: var(--font-sans);
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--color-forest-dark);
+  margin-bottom: var(--space-4);
+}
+
+.timeline-description {
+  font-size: 0.9rem;
+  color: var(--color-charcoal-light);
+  line-height: 1.55;
+  margin-bottom: 0;
+}

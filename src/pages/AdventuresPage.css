@@ -1,0 +1,36 @@
+.adventures-page {
+  padding-bottom: var(--space-80);
+}
+
+.adventures-header-section {
+  background-color: var(--color-cream-subtle);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-48) 0;
+  margin-bottom: var(--space-32);
+}
+
+.header-meta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-olive);
+  margin-bottom: var(--space-8);
+}
+
+.adventures-page-title {
+  margin-bottom: var(--space-12);
+}
+
+.adventures-page-lead {
+  max-width: 680px;
+  margin-bottom: 0;
+}
+
+.adventures-listing-container {
+  display: flex;
+  flex-direction: column;
+}
