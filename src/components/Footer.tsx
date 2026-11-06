@@ -91,9 +91,19 @@ export const Footer: React.FC = () => {
             <Link to="/about#credits" className="footer-sublink">
               Asset Credits
             </Link>
+            <span className="bullet-sep" aria-hidden="true">•</span>
+            <a
+              href="https://github.com/nirasha-dev/beyond-adventure-events-hub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-sublink"
+            >
+              GitHub Repository
+            </a>
           </div>
         </div>
       </div>
     </footer>
   );
 };
+
