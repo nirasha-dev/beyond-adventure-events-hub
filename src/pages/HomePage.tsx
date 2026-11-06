@@ -66,32 +66,32 @@ export const HomePage: React.FC<HomePageProps> = ({ isSaved, onToggleSave }) => 
           <div className="hero-content">
             <div className="hero-eyebrow">
               <Compass size={16} aria-hidden="true" />
-              <span>University of Kelaniya Concept</span>
+              <span>University of Kelaniya Adventure Club</span>
             </div>
 
             <h1 id="hero-title" className="hero-title">
-              Less scrolling. <br />
-              <span className="hero-title-accent">More exploring.</span>
+              We are the <br />
+              <span className="hero-title-accent">Adventure Club.</span>
             </h1>
 
             <p className="hero-description lead">
-              Discover your next adventure, prepare your essentials, and make room for something unforgettable.
+              A community of like-minded undergraduates building skills, friendships and a lasting passion for adventure.
             </p>
 
             <div className="hero-actions">
               <Link to="/adventures" className="btn btn-primary btn-lg">
-                <span>Explore adventures</span>
+                <span>Explore Adventures</span>
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
               <Link to="/my-kit" className="btn btn-secondary btn-lg hero-btn-secondary">
                 <Backpack size={18} aria-hidden="true" />
-                <span>Build my adventure kit</span>
+                <span>Plan your next trip</span>
               </Link>
             </div>
 
             <div className="hero-disclaimer-pill">
               <ShieldAlert size={14} aria-hidden="true" />
-              <span>Unofficial concept for recruitment assignment • Illustrative events</span>
+              <span>Explore, prepare and adventure together</span>
             </div>
           </div>
         </div>
@@ -104,11 +104,11 @@ export const HomePage: React.FC<HomePageProps> = ({ isSaved, onToggleSave }) => 
             <div>
               <span className="section-eyebrow">Curated Expeditions</span>
               <h2 id="featured-title" className="section-title">
-                Featured Adventures
+                Upcoming Adventures
               </h2>
             </div>
             <Link to="/adventures" className="btn btn-secondary btn-sm section-more-link">
-              <span>View all expeditions</span>
+              <span>Explore Adventures</span>
               <ArrowRight size={16} aria-hidden="true" />
             </Link>
           </div>
@@ -132,7 +132,7 @@ export const HomePage: React.FC<HomePageProps> = ({ isSaved, onToggleSave }) => 
           <div className="section-header text-center">
             <span className="section-eyebrow">The Student Journey</span>
             <h2 id="how-title" className="section-title">
-              How BEYOND Works
+              How Adventures Works
             </h2>
             <p className="section-subtitle">
               Three simple steps designed to take the guesswork out of student outdoor expeditions.

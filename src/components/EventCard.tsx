@@ -69,7 +69,7 @@ export const EventCard: React.FC<EventCardProps> = ({
           <Bookmark size={18} fill={isSaved ? 'currentColor' : 'none'} aria-hidden="true" />
         </button>
 
-        <span className="card-demo-tag">Sample Event</span>
+        <span className="card-demo-tag">Demo event</span>
       </div>
 
       {/* Card Content Body */}
@@ -123,4 +123,3 @@ export const EventCard: React.FC<EventCardProps> = ({
     </article>
   );
 };
-

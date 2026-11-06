@@ -44,11 +44,11 @@ export const AdventuresPage: React.FC<AdventuresPageProps> = ({
         <div className="container">
           <div className="header-meta-eyebrow">
             <Compass size={16} aria-hidden="true" />
-            <span>Illustrative Expeditions Directory</span>
+            <span>Adventure Club • University of Kelaniya</span>
           </div>
-          <h1 className="adventures-page-title">Explore Adventures</h1>
+          <h1 className="adventures-page-title">Adventures</h1>
           <p className="adventures-page-lead lead">
-            Browse upcoming student expeditions, compare terrain requirements, and check illustrative cost allocations before preparing your kit.
+            Find an activity that fits your crew, see what to expect, and get ready for the next Adventure Club experience.
           </p>
         </div>
       </section>
@@ -98,4 +98,3 @@ export const AdventuresPage: React.FC<AdventuresPageProps> = ({
     </div>
   );
 };
-

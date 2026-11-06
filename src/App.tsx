@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { DisclaimerBanner } from './components/DisclaimerBanner';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
@@ -22,9 +21,6 @@ export const App: React.FC = () => {
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
-
-      {/* Mandatory Unofficial Disclosure Banner */}
-      <DisclaimerBanner />
 
       {/* Main Global Navigation */}
       <Header savedCount={savedCount} />
@@ -73,4 +69,3 @@ export const App: React.FC = () => {
 };
 
 export default App;
-

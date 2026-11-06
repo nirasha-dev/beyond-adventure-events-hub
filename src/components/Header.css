@@ -24,6 +24,13 @@
   color: var(--color-forest-dark);
 }
 
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
 .brand-icon {
   display: flex;
   align-items: center;
@@ -34,6 +41,10 @@
   color: var(--color-forest-dark);
   border-radius: var(--radius-sm);
   transition: transform var(--transition-fast);
+}
+
+.brand-logo:hover .brand-mark {
+  transform: scale(1.05);
 }
 
 .brand-logo:hover .brand-icon {
@@ -240,4 +251,3 @@
   line-height: 1.4;
   margin-bottom: 0;
 }
-

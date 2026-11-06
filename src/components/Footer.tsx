@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Compass, ExternalLink, Heart, ShieldAlert } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import './Footer.css';
 
 export const Footer: React.FC = () => {
@@ -11,17 +11,14 @@ export const Footer: React.FC = () => {
           {/* Brand info */}
           <div className="footer-col footer-brand-col">
             <div className="footer-brand">
-              <span className="brand-icon">
-                <Compass size={22} aria-hidden="true" />
-              </span>
-              <span className="brand-title">BEYOND</span>
+              <img className="brand-mark" src="/adventure-club-logo.png" alt="" />
+              <span className="brand-title">Adventure Club</span>
             </div>
             <p className="footer-tagline">
-              An interactive events hub concept designed to help university students explore Sri Lankan wilderness with confidence, clear logistics, and essential packing checklists.
+              A community of University of Kelaniya undergraduates passionate about adventure, skills development and environmental conservation.
             </p>
             <div className="creator-badge">
-              <Heart size={14} className="creator-heart" aria-hidden="true" />
-              <span>Created by <strong>Nirasha Ranasinghe</strong>, University of Kelaniya Undergraduate</span>
+              <span>University of Kelaniya • Adventure Club</span>
             </div>
           </div>
 
@@ -33,16 +30,9 @@ export const Footer: React.FC = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/adventures">Adventures Directory</Link>
+                <Link to="/adventures">Adventures</Link>
               </li>
               <li>
-                <Link to="/my-kit">My Adventure Kit</Link>
-              </li>
-              <li>
-                <Link to="/about">About This Project</Link>
-              </li>
-              <li>
-                <Link to="/about#credits">Photography & Asset Credits</Link>
               </li>
             </ul>
           </div>
@@ -51,7 +41,7 @@ export const Footer: React.FC = () => {
           <div className="footer-col">
             <h3 className="footer-heading">Club Reference</h3>
             <p className="footer-small-text">
-              Looking for the official University of Kelaniya Adventure Club website, executive board, and club registrations?
+              Visit the official club website for news, membership and club updates.
             </p>
             <a
               href="https://ac-uok.netlify.app/home"
@@ -65,23 +55,11 @@ export const Footer: React.FC = () => {
             </a>
           </div>
 
-          {/* Important Disclosure */}
-          <div className="footer-col footer-disclosure-col">
-            <div className="disclosure-card">
-              <div className="disclosure-header">
-                <ShieldAlert size={16} aria-hidden="true" />
-                <span className="disclosure-title">Recruitment Assignment Notice</span>
-              </div>
-              <p className="disclosure-text">
-                This website is a standalone, unofficial concept created exclusively for the Adventure Club recruitment assignment. All listed events, schedules, fees, and registration flows are illustrative demonstrations and do not represent actual university bookings or official endorsements.
-              </p>
-            </div>
-          </div>
         </div>
 
         <div className="footer-bottom">
           <p className="copyright-text">
-            © {new Date().getFullYear()} BEYOND — Conceptual UI/UX assignment by Nirasha Ranasinghe. Built with React, TypeScript & Vite.
+            © {new Date().getFullYear()} Adventure Club, University of Kelaniya.
           </p>
           <div className="footer-bottom-links">
             <Link to="/about" className="footer-sublink">
@@ -106,4 +84,3 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
-
