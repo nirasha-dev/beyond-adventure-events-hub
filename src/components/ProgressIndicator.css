@@ -1,0 +1,124 @@
+.progress-card {
+  background-color: var(--color-cream-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-20);
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  transition: all var(--transition-fast);
+}
+
+.progress-card.complete {
+  border-color: var(--color-forest);
+  background-color: #FFFFFF;
+}
+
+.progress-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-12);
+  flex-wrap: wrap;
+}
+
+.progress-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.progress-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-olive);
+}
+
+.progress-count-text {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-charcoal);
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+.progress-count-text strong {
+  color: var(--color-forest-dark);
+}
+
+.percentage-pill {
+  font-size: 0.85rem;
+  font-weight: 700;
+  background-color: var(--color-lime);
+  color: var(--color-forest-dark);
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+}
+
+.complete-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  background-color: var(--color-forest);
+  color: var(--color-lime);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  animation: bounceSoft 600ms ease-out;
+}
+
+@keyframes bounceSoft {
+  0% { transform: scale(0.9); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.progress-track {
+  width: 100%;
+  height: 12px;
+  background-color: var(--color-cream-subtle);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  border: 1px solid var(--color-border-subtle);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-olive) 0%, var(--color-forest) 50%, var(--color-lime-dark) 100%);
+  border-radius: var(--radius-full);
+  transition: width 300ms ease-out;
+}
+
+.progress-footer-note {
+  font-size: 0.84rem;
+  color: var(--color-charcoal-light);
+}
+
+.progress-footer-note p {
+  margin-bottom: 0;
+}
+
+.complete-message {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.complete-message svg {
+  flex-shrink: 0;
+}
+
+.pending-message {
+  color: var(--color-olive);
+}
+
