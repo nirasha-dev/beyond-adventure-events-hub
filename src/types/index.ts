@@ -103,3 +103,4 @@ export interface StoredSavedAdventures {
   version: number;
   savedIds: string[];
 }
+

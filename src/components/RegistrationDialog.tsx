@@ -363,3 +363,4 @@ export const RegistrationDialog: React.FC<RegistrationDialogProps> = ({
     </div>
   );
 };
+

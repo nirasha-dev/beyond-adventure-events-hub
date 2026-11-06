@@ -312,3 +312,4 @@ export const EventDetailPage: React.FC<EventDetailPageProps> = ({
     </div>
   );
 };
+

@@ -69,3 +69,4 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
     </div>
   );
 };
+

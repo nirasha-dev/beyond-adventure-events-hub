@@ -33,3 +33,4 @@ export function calculateProgress(items: ChecklistItem[] = []): ProgressSummary 
     isComplete,
   };
 }
+

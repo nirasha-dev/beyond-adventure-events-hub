@@ -123,3 +123,4 @@ export const EventCard: React.FC<EventCardProps> = ({
     </article>
   );
 };
+

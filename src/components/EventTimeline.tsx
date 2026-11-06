@@ -51,3 +51,4 @@ export const EventTimeline: React.FC<EventTimelineProps> = ({ items }) => {
     </div>
   );
 };
+

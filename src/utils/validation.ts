@@ -92,3 +92,4 @@ export function validateCustomChecklistItem(
 
   return { isValid: true, sanitizedName: sanitized };
 }
+

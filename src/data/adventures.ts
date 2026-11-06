@@ -615,3 +615,4 @@ export const ADVENTURES_DATA: Adventure[] = [
     isDemo: true,
   },
 ];
+

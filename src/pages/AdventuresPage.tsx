@@ -98,3 +98,4 @@ export const AdventuresPage: React.FC<AdventuresPageProps> = ({
     </div>
   );
 };
+

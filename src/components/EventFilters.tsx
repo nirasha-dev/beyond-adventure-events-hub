@@ -187,3 +187,4 @@ export const EventFilters: React.FC<EventFiltersProps> = ({
     </section>
   );
 };
+
