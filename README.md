@@ -8,7 +8,7 @@
 
 ## 📌 Links & Deliverables
 
-- **Source Repository:** [github.com/nirasha-dev/beyond-adventure-events-hub-](https://github.com/nirasha-dev/beyond-adventure-events-hub-)
+- **Source Repository:** [github.com/nirasha-dev/beyond-adventure-events-hub](https://github.com/nirasha-dev/beyond-adventure-events-hub)
 - **Live Demo:** `[Insert your Netlify / Vercel deployment link here after publishing]`
 - **Official University Club Website:** [ac-uok.netlify.app/home](https://ac-uok.netlify.app/home)
 
@@ -238,17 +238,17 @@ This project is a static Single-Page Application (SPA) ready for free hosting on
    ```bash
    git add .
    git commit -m "feat: complete BEYOND Adventure Events Hub project"
-   git remote add origin https://github.com/nirasha-dev/beyond-adventure-events-hub-.git
+   git remote add origin https://github.com/nirasha-dev/beyond-adventure-events-hub.git
    git branch -M main
    git push -u origin main
    ```
 2. Log into [Netlify](https://app.netlify.com/).
 3. Click **Add new site** > **Import an existing project** > **GitHub**.
-4. Select your repository `beyond-adventure-events-hub-`.
+4. Select your repository `beyond-adventure-events-hub`.
 5. Set:
    - **Build command:** `npm run build`
    - **Publish directory:** `dist`
-6. Click **Deploy beyond-adventure-events-hub-**.
+6. Click **Deploy beyond-adventure-events-hub**.
 7. *(The included `public/_redirects` file ensures that refreshing `/adventures/beyond-the-mist` or `/my-kit` works without 404 errors).*
 
 ### Option B: Deploy to Vercel
