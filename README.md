@@ -9,7 +9,7 @@
 ## 📌 Links & Deliverables
 
 - **Source Repository:** [github.com/nirasha-dev/beyond-adventure-events-hub](https://github.com/nirasha-dev/beyond-adventure-events-hub)
-- **Live Demo:** `[[Insert your Netlify / Vercel deployment link here after publishing](https://roaring-begonia-c1b968.netlify.app/)]`
+- **[Live Demo](https://roaring-begonia-c1b968.netlify.app/)**
 - **Official University Club Website:** [ac-uok.netlify.app/home](https://ac-uok.netlify.app/home)
 
 ---
@@ -265,4 +265,3 @@ This project is a static Single-Page Application (SPA) ready for free hosting on
 **Nirasha Ranasinghe**  
 Undergraduate, University of Kelaniya, Sri Lanka  
 Applicant for the Adventure Club Recruitment Assignment
-
