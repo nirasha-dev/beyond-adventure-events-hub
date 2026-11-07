@@ -9,7 +9,7 @@
 ## 📌 Links & Deliverables
 
 - **Source Repository:** [github.com/nirasha-dev/beyond-adventure-events-hub](https://github.com/nirasha-dev/beyond-adventure-events-hub)
-- **Live Demo:** [roaring-begonia-c1b968.netlify.app](https://roaring-begonia-c1b968.netlify.app/)
+- **[Live Demo](https://roaring-begonia-c1b968.netlify.app/)**
 - **Official University Club Website:** [ac-uok.netlify.app/home](https://ac-uok.netlify.app/home)
 
 ---
