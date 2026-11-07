@@ -3,12 +3,10 @@ import { useLocation } from 'react-router-dom';
 import {
   Compass,
   Heart,
-  ExternalLink,
   ShieldCheck,
   Code2,
   Layers,
   Sparkles,
-  Camera,
   CheckCircle,
 } from 'lucide-react';
 import './AboutPage.css';
@@ -16,7 +14,7 @@ import './AboutPage.css';
 export const AboutPage: React.FC = () => {
   const location = useLocation();
 
-  // Handle anchor scroll (e.g. #credits)
+  // Handle anchor scroll.
   useEffect(() => {
     if (location.hash) {
       const element = document.getElementById(location.hash.slice(1));
@@ -57,16 +55,7 @@ export const AboutPage: React.FC = () => {
             <p>
               <strong>Important Scope & Identity Disclosure:</strong>
               <br />
-              The University of Kelaniya Adventure Club already maintains an official club website at{' '}
-              <a
-                href="https://ac-uok.netlify.app/home"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-link"
-              >
-                ac-uok.netlify.app/home <ExternalLink size={12} aria-hidden="true" />
-              </a>
-              . <strong>BEYOND</strong> is not a replacement, nor is it officially commissioned or endorsed by the university or club. It serves as a creative, standalone proof-of-concept exploring how digital tools can enhance expedition preparedness and trip confidence for university students.
+              The University of Kelaniya Adventure Club maintains its own official channels. <strong>BEYOND</strong> is not a replacement, nor is it officially commissioned or endorsed by the university or club. It serves as a creative, standalone proof-of-concept exploring how digital tools can enhance expedition preparedness and trip confidence for university students.
             </p>
           </div>
         </section>
@@ -173,83 +162,6 @@ export const AboutPage: React.FC = () => {
           </ul>
         </section>
 
-        {/* Asset Credits Section */}
-        <section id="credits" className="about-card" aria-labelledby="credits-heading">
-          <div className="card-heading-group">
-            <Camera size={24} className="card-accent-icon" aria-hidden="true" />
-            <h2 id="credits-heading">Asset & Media Credits</h2>
-          </div>
-          <p>
-            In adherence to intellectual property standards and assignment guidelines, all outdoor photography is explicitly credited and licensed for free commercial and editorial use:
-          </p>
-
-          <div className="credits-table-wrapper">
-            <table className="credits-table">
-              <thead>
-                <tr>
-                  <th scope="col">Concept Event</th>
-                  <th scope="col">Photographer</th>
-                  <th scope="col">Source</th>
-                  <th scope="col">License</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Beyond the Mist</strong> (Knuckles Hike)</td>
-                  <td>Bailey Zindel</td>
-                  <td>
-                    <a
-                      href="https://unsplash.com/photos/4HG3Ca3EzWk"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-link"
-                    >
-                      Unsplash <ExternalLink size={11} aria-hidden="true" />
-                    </a>
-                  </td>
-                  <td>Unsplash Free Commercial License</td>
-                </tr>
-                <tr>
-                  <td><strong>Under the Stars</strong> (Coastal Camp)</td>
-                  <td>Scott Goodwill</td>
-                  <td>
-                    <a
-                      href="https://unsplash.com/photos/y8Ngwq34_Ak"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-link"
-                    >
-                      Unsplash <ExternalLink size={11} aria-hidden="true" />
-                    </a>
-                  </td>
-                  <td>Unsplash Free Commercial License</td>
-                </tr>
-                <tr>
-                  <td><strong>Chase the Rapids</strong> (Kitulgala)</td>
-                  <td>Kalen Emsley</td>
-                  <td>
-                    <a
-                      href="https://unsplash.com/photos/Bkci_8qcdvQ"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-link"
-                    >
-                      Unsplash <ExternalLink size={11} aria-hidden="true" />
-                    </a>
-                  </td>
-                  <td>Unsplash Free Commercial License</td>
-                </tr>
-                <tr>
-                  <td><strong>Editorial Headings</strong></td>
-                  <td>Fraunces & Plus Jakarta Sans</td>
-                  <td>Google Fonts</td>
-                  <td>SIL Open Font License (OFL)</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
         {/* Creator Sign-off */}
         <section className="about-card creator-signature-card">
           <Heart size={24} className="creator-heart-icon" aria-hidden="true" />
@@ -266,4 +178,3 @@ export const AboutPage: React.FC = () => {
     </div>
   );
 };
-

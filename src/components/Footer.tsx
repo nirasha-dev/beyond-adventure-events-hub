@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink } from 'lucide-react';
 import './Footer.css';
 
 export const Footer: React.FC = () => {
@@ -41,17 +40,16 @@ export const Footer: React.FC = () => {
           <div className="footer-col">
             <h3 className="footer-heading">Club Reference</h3>
             <p className="footer-small-text">
-              Visit the official club website for news, membership and club updates.
+              This independent concept is not the official club website and does not publish club news or membership updates.
             </p>
             <a
               href="https://ac-uok.netlify.app/home"
               target="_blank"
               rel="noopener noreferrer"
               className="official-club-link"
-              aria-label="Visit official University of Kelaniya Adventure Club website (opens in new tab)"
+              aria-label="Visit the official University of Kelaniya Adventure Club website"
             >
-              <span>Visit Official Club Website</span>
-              <ExternalLink size={14} aria-hidden="true" />
+              Visit the official club website
             </a>
           </div>
 
@@ -64,10 +62,6 @@ export const Footer: React.FC = () => {
           <div className="footer-bottom-links">
             <Link to="/about" className="footer-sublink">
               Project Details & Architecture
-            </Link>
-            <span className="bullet-sep" aria-hidden="true">•</span>
-            <Link to="/about#credits" className="footer-sublink">
-              Asset Credits
             </Link>
             <span className="bullet-sep" aria-hidden="true">•</span>
             <a

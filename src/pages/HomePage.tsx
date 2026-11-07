@@ -24,7 +24,7 @@ const FAQS = [
   {
     question: 'Is this an official club website?',
     answer:
-      'No. BEYOND is an independent, unofficial concept website created by Nirasha Ranasinghe specifically for the University of Kelaniya Adventure Club recruitment assignment. The official club website, executive board, and announcements can be found at https://ac-uok.netlify.app/home.',
+      'No. BEYOND is an independent, unofficial concept website created by Nirasha Ranasinghe specifically for the University of Kelaniya Adventure Club recruitment assignment. Please use the club’s official channels for executive board information and announcements.',
   },
   {
     question: 'Are these real events?',
@@ -50,6 +50,9 @@ const FAQS = [
 
 export const HomePage: React.FC<HomePageProps> = ({ isSaved, onToggleSave }) => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const nextAdventure = [...ADVENTURES_DATA]
+    .filter((adventure) => adventure.eventStatus === 'Upcoming')
+    .sort((a, b) => new Date(a.startDateTime).getTime() - new Date(b.startDateTime).getTime())[0];
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex((prev) => (prev === index ? null : index));
@@ -108,20 +111,20 @@ export const HomePage: React.FC<HomePageProps> = ({ isSaved, onToggleSave }) => 
               </h2>
             </div>
             <Link to="/adventures" className="btn btn-secondary btn-sm section-more-link">
-              <span>Explore Adventures</span>
+              <span>View All Adventures</span>
               <ArrowRight size={16} aria-hidden="true" />
             </Link>
           </div>
 
           <div className="adventures-grid">
-            {ADVENTURES_DATA.slice(0, 3).map((adventure) => (
+            {nextAdventure && (
               <EventCard
-                key={adventure.id}
-                adventure={adventure}
-                isSaved={isSaved(adventure.id)}
+                key={nextAdventure.id}
+                adventure={nextAdventure}
+                isSaved={isSaved(nextAdventure.id)}
                 onToggleSave={onToggleSave}
               />
-            ))}
+            )}
           </div>
         </div>
       </section>

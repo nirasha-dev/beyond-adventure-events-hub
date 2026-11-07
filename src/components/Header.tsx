@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { ArrowRight, Bookmark, Menu, X } from 'lucide-react';
+import { Bookmark, Menu, X } from 'lucide-react';
 import './Header.css';
 
 interface HeaderProps {
   savedCount: number;
 }
-
-const officialLinks = [
-  { label: 'About Us', href: 'https://ac-uok.netlify.app/aboutus.html' },
-  { label: 'Adventurer Diaries', href: 'https://ac-uok.netlify.app/blog.html' },
-];
 
 export const Header: React.FC<HeaderProps> = ({ savedCount }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -43,12 +38,9 @@ export const Header: React.FC<HeaderProps> = ({ savedCount }) => {
         <nav className="desktop-nav" aria-label="Main Navigation">
           <ul className="nav-links">
             <li><NavLink to="/" end className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Home</NavLink></li>
-            {officialLinks.map((item) => <li key={item.label}><a className="nav-link" href={item.href}>{item.label}</a></li>)}
+            <li><NavLink to="/about" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>About Us</NavLink></li>
             <li>{adventureLink}</li>
           </ul>
-          <div className="nav-actions">
-            <a href="https://ac-uok.netlify.app/contact.html" className="btn btn-primary btn-sm">Join Us <ArrowRight size={16} aria-hidden="true" /></a>
-          </div>
         </nav>
 
         <button type="button" className="mobile-toggle" aria-expanded={mobileMenuOpen} aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'} onClick={() => setMobileMenuOpen((open) => !open)}>
@@ -66,9 +58,8 @@ export const Header: React.FC<HeaderProps> = ({ savedCount }) => {
             <nav aria-label="Mobile Navigation">
               <ul className="mobile-nav-links">
                 <li><NavLink to="/" end className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}>Home</NavLink></li>
-                {officialLinks.map((item) => <li key={item.label}><a className="mobile-nav-link" href={item.href}>{item.label}</a></li>)}
+                <li><NavLink to="/about" className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}>About Us</NavLink></li>
                 <li><NavLink to="/adventures" className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}>Adventures</NavLink></li>
-                <li><a href="https://ac-uok.netlify.app/contact.html" className="btn btn-primary mobile-nav-cta">Join Us <ArrowRight size={16} aria-hidden="true" /></a></li>
               </ul>
             </nav>
             <p className="mobile-nav-note">Adventure Club, University of Kelaniya.</p>

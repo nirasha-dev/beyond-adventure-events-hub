@@ -50,7 +50,9 @@ export const EventCard: React.FC<EventCardProps> = ({
         {/* Top Badges */}
         <div className="card-badges-top">
           <span className="badge badge-category">{adventure.category}</span>
-          <span className={`badge ${statusClass}`}>{adventure.registrationStatus}</span>
+          <span className={`badge ${adventure.eventStatus === 'Completed' ? 'badge-closed' : statusClass}`}>
+            {adventure.eventStatus === 'Completed' ? 'Completed' : adventure.registrationStatus}
+          </span>
         </div>
 
         {/* Save / Bookmark Button */}
@@ -85,7 +87,9 @@ export const EventCard: React.FC<EventCardProps> = ({
           </Link>
         </h3>
 
-        <p className="card-description">{adventure.shortDescription}</p>
+        <p className="card-description">
+          {adventure.eventStatus === 'Completed' && adventure.recap ? adventure.recap : adventure.shortDescription}
+        </p>
 
         {/* Metadata Chips */}
         <div className="card-meta-grid">
@@ -115,7 +119,7 @@ export const EventCard: React.FC<EventCardProps> = ({
             className="btn btn-secondary btn-sm card-action-btn"
             aria-label={`View details for ${adventure.title}`}
           >
-            <span>View details</span>
+            <span>{adventure.eventStatus === 'Completed' ? 'Explore Trip Archive' : 'View Trip Details'}</span>
             <ArrowUpRight size={16} aria-hidden="true" />
           </Link>
         </div>

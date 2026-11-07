@@ -2,7 +2,38 @@ export type AdventureCategory = 'Hiking' | 'Camping' | 'Water activities';
 
 export type AdventureDifficulty = 'Easy' | 'Moderate' | 'Challenging';
 
-export type RegistrationStatus = 'Open' | 'Waitlist' | 'Closed';
+export type RegistrationStatus = 'Opening Soon' | 'Open' | 'Full' | 'Waitlist' | 'Closed';
+export type AdventureStatus = 'Upcoming' | 'Completed' | 'Postponed' | 'Cancelled';
+
+export interface AdventurePhoto {
+  image: string;
+  alt: string;
+  caption: string;
+  credit?: string;
+}
+
+export interface AdventureArticle {
+  title: string;
+  url: string;
+  source: string;
+}
+
+export interface ParticipantExperience {
+  quote: string;
+  author?: string;
+}
+
+export interface TripUpdate {
+  date: string;
+  title: string;
+  message: string;
+}
+
+export interface PackingProvision {
+  bringYourOwn: string[];
+  providedByClub: string[];
+  availableToBorrow: string[];
+}
 
 export type ChecklistCategory =
   | 'Clothing'
@@ -54,6 +85,16 @@ export interface Adventure {
   imageAlt: string;
   imageCredit: ImageCredit;
   registrationStatus: RegistrationStatus;
+  eventStatus: AdventureStatus;
+  registrationLink?: string;
+  registrationDeadline?: string;
+  feeIncludes?: string[];
+  eligibility?: string;
+  beginnerSuitability?: string;
+  transport?: string;
+  mapsUrl?: string;
+  tripUpdate?: TripUpdate;
+  packingProvision?: PackingProvision;
   registrationNote: string;
   meetingPoint: string;
   itinerary: ItineraryItem[];
@@ -63,6 +104,11 @@ export interface Adventure {
   safetyDisclosure: string;
   defaultChecklist: ChecklistItem[];
   isDemo: boolean;
+  recap?: string;
+  photos?: AdventurePhoto[];
+  articles?: AdventureArticle[];
+  participantExperiences?: ParticipantExperience[];
+  resources?: AdventureArticle[];
 }
 
 export type SortOption =
@@ -103,4 +149,3 @@ export interface StoredSavedAdventures {
   version: number;
   savedIds: string[];
 }
-

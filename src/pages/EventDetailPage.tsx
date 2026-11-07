@@ -55,13 +55,19 @@ export const EventDetailPage: React.FC<EventDetailPageProps> = ({
   const saved = isSaved(adventure.id);
 
   const statusClass =
-    adventure.registrationStatus === 'Open'
+    adventure.eventStatus === 'Completed'
+      ? 'badge-closed'
+      : adventure.registrationStatus === 'Open'
       ? 'badge-open'
-      : adventure.registrationStatus === 'Waitlist'
+      : adventure.registrationStatus === 'Waitlist' || adventure.registrationStatus === 'Full'
       ? 'badge-waitlist'
       : 'badge-closed';
 
-  const isClosed = adventure.registrationStatus === 'Closed';
+  const isClosed =
+    adventure.eventStatus !== 'Upcoming' ||
+    adventure.registrationStatus === 'Closed' ||
+    adventure.registrationStatus === 'Full';
+  const statusLabel = adventure.eventStatus === 'Completed' ? 'Completed' : adventure.registrationStatus;
 
   return (
     <div className="event-detail-page">
@@ -93,9 +99,32 @@ export const EventDetailPage: React.FC<EventDetailPageProps> = ({
 
             <div className="detail-media-badges">
               <span className="badge badge-category">{adventure.category}</span>
-              <span className={`badge ${statusClass}`}>{adventure.registrationStatus}</span>
+              <span className={`badge ${statusClass}`}>
+                {statusLabel}
+              </span>
               <span className="badge badge-demo-prominent">Sample Event — Illustrative Only</span>
             </div>
+
+            {adventure.eventStatus === 'Upcoming' && (
+              <section className="detail-section decision-section" aria-labelledby="decision-heading">
+                <h2 id="decision-heading" className="detail-section-title">Before you join</h2>
+                {adventure.tripUpdate && (
+                  <div className="trip-update-callout" role="status">
+                    <strong>Trip Update · {adventure.tripUpdate.date}</strong>
+                    <span>{adventure.tripUpdate.title}: {adventure.tripUpdate.message}</span>
+                  </div>
+                )}
+                <div className="decision-grid">
+                  <div><strong>Fee</strong><span>{adventure.displayPrice}</span></div>
+                  <div><strong>Registration deadline</strong><span>{adventure.registrationDeadline || 'To be confirmed'}</span></div>
+                  <div><strong>Who can join</strong><span>{adventure.eligibility || 'To be confirmed by the committee.'}</span></div>
+                  <div><strong>Beginner suitability</strong><span>{adventure.beginnerSuitability || 'See the trip briefing.'}</span></div>
+                  <div><strong>Transport</strong><span>{adventure.transport || 'Details to be confirmed.'}</span></div>
+                  <div><strong>Fee includes</strong><span>{adventure.feeIncludes?.join(', ') || 'See the registration notice.'}</span></div>
+                </div>
+                <Link to="/adventures#first-adventure-guide" className="guide-link">Read the First Adventure Guide →</Link>
+              </section>
+            )}
 
             <div className="detail-media-caption">
               <span>Photo by {adventure.imageCredit.photographer} ({adventure.imageCredit.source})</span>
@@ -159,9 +188,75 @@ export const EventDetailPage: React.FC<EventDetailPageProps> = ({
               <div>
                 <strong>Sample Assembly & Meeting Point:</strong>
                 <p>{adventure.meetingPoint}</p>
+                {adventure.mapsUrl && (
+                  <a href={adventure.mapsUrl} target="_blank" rel="noopener noreferrer" className="inline-link">Open in Maps</a>
+                )}
               </div>
             </div>
           </section>
+
+          {adventure.eventStatus === 'Upcoming' && adventure.packingProvision && (
+            <section className="detail-section" aria-labelledby="packing-provision-heading">
+              <h2 id="packing-provision-heading" className="detail-section-title">Packing provisions</h2>
+              <div className="provisions-grid">
+                <div className="provision-box excluded-box"><h3 className="provision-box-title">Bring Your Own</h3><ul className="provision-list">{adventure.packingProvision.bringYourOwn.map((item) => <li key={item}>{item}</li>)}</ul></div>
+                <div className="provision-box included-box"><h3 className="provision-box-title">Provided by the Club</h3><ul className="provision-list">{adventure.packingProvision.providedByClub.map((item) => <li key={item}>{item}</li>)}</ul></div>
+                <div className="provision-box"><h3 className="provision-box-title">Available to Borrow</h3><ul className="provision-list">{adventure.packingProvision.availableToBorrow.map((item) => <li key={item}>{item}</li>)}</ul></div>
+              </div>
+            </section>
+          )}
+
+          {adventure.eventStatus === 'Completed' && (
+            <>
+              {adventure.recap && (
+                <section className="detail-section archive-section" aria-labelledby="recap-heading">
+                  <h2 id="recap-heading" className="detail-section-title">Trip recap</h2>
+                  <p className="detail-body-text">{adventure.recap}</p>
+                </section>
+              )}
+              {adventure.photos && adventure.photos.length > 0 && (
+                <section className="detail-section archive-section" aria-labelledby="gallery-heading">
+                  <h2 id="gallery-heading" className="detail-section-title">Photo gallery</h2>
+                  <div className="archive-gallery">
+                    {adventure.photos.map((photo) => (
+                      <figure key={photo.image} className="archive-photo">
+                        <a href={photo.image} target="_blank" rel="noopener noreferrer">
+                          <img src={photo.image} alt={photo.alt} loading="lazy" />
+                        </a>
+                        <figcaption>{photo.caption}{photo.credit && <span>{photo.credit}</span>}</figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                </section>
+              )}
+              {adventure.articles && adventure.articles.length > 0 && (
+                <section className="detail-section archive-section" aria-labelledby="articles-heading">
+                  <h2 id="articles-heading" className="detail-section-title">Articles & Diaries</h2>
+                  <ul className="archive-links">
+                    {adventure.articles.map((article) => <li key={article.title}><a href={article.url}>{article.title}</a><span>{article.source}</span></li>)}
+                  </ul>
+                </section>
+              )}
+              {adventure.participantExperiences && adventure.participantExperiences.length > 0 && (
+                <section className="detail-section archive-section" aria-labelledby="experiences-heading">
+                  <h2 id="experiences-heading" className="detail-section-title">Participant experiences</h2>
+                  <div className="archive-quotes">
+                    {adventure.participantExperiences.map((experience) => (
+                      <blockquote key={experience.quote}><p>“{experience.quote}”</p>{experience.author && <cite>{experience.author}</cite>}</blockquote>
+                    ))}
+                  </div>
+                </section>
+              )}
+              {adventure.resources && adventure.resources.length > 0 && (
+                <section className="detail-section archive-section" aria-labelledby="resources-heading">
+                  <h2 id="resources-heading" className="detail-section-title">Videos & resources</h2>
+                  <ul className="archive-links">
+                    {adventure.resources.map((resource) => <li key={resource.title}><a href={resource.url}>{resource.title}</a><span>{resource.source}</span></li>)}
+                  </ul>
+                </section>
+              )}
+            </>
+          )}
 
           {/* Itinerary Timeline */}
           <section className="detail-section" aria-labelledby="itinerary-heading">
@@ -256,21 +351,22 @@ export const EventDetailPage: React.FC<EventDetailPageProps> = ({
                 <span>Prepare my kit</span>
               </Link>
 
-              <button
-                ref={registerButtonRef}
-                type="button"
-                className="btn btn-secondary w-full"
-                disabled={isClosed}
-                onClick={() => setIsRegistrationOpen(true)}
-                aria-label={
-                  isClosed
-                    ? 'Registration closed for this sample event'
-                    : `Try demo registration for ${adventure.title}`
-                }
-              >
-                <Sparkles size={16} aria-hidden="true" />
-                <span>{isClosed ? 'Registration Closed' : 'Try demo registration'}</span>
-              </button>
+              {!isClosed && (
+                adventure.registrationLink ? (
+                  <a href={adventure.registrationLink} className="btn btn-secondary w-full">Register for this adventure</a>
+                ) : (
+                  <button
+                    ref={registerButtonRef}
+                    type="button"
+                    className="btn btn-secondary w-full"
+                    onClick={() => setIsRegistrationOpen(true)}
+                    aria-label={`Try demo registration for ${adventure.title}`}
+                  >
+                    <Sparkles size={16} aria-hidden="true" />
+                    <span>Try demo registration</span>
+                  </button>
+                )
+              )}
 
               <button
                 type="button"
@@ -312,4 +408,3 @@ export const EventDetailPage: React.FC<EventDetailPageProps> = ({
     </div>
   );
 };
-

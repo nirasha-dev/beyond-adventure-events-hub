@@ -125,6 +125,31 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+### Adventures and trip archives
+
+The review preview is available at `/adventures`. Adventures are managed in
+[`src/data/adventures.ts`](./src/data/adventures.ts), with one record per trip.
+Set `eventStatus` to `Upcoming` or `Completed` to move a trip between sections
+without changing its `slug` or detail URL. Upcoming records use
+`registrationStatus` and can optionally provide a club-approved
+`registrationLink`; records without that link use the clearly labelled demo
+registration form.
+
+Completed records can add `recap`, `photos`, `articles`,
+`participantExperiences`, and `resources`. Empty optional fields are omitted
+from the archive page, so content can be published progressively. Keep local
+event assets grouped by slug under `public/assets/adventures/<slug>/` when
+replacing the illustrative remote images.
+
+Upcoming records can publish a `tripUpdate`, `registrationDeadline`,
+`feeIncludes`, `eligibility`, `beginnerSuitability`, `transport`, `mapsUrl`,
+and `packingProvision` from the same record. To publish a committee update,
+edit `tripUpdate`; to close registration without moving a trip, change only
+`registrationStatus`. To publish an archive later, change `eventStatus` to
+`Completed` and add the recap and slug-specific photos/articles. The permanent
+URL remains `/adventures/<slug>`. The homepage automatically features the
+nearest upcoming record.
+
 ### Running Unit Tests
 
 Run the Vitest test suite:
@@ -265,4 +290,3 @@ This project is a static Single-Page Application (SPA) ready for free hosting on
 **Nirasha Ranasinghe**  
 Undergraduate, University of Kelaniya, Sri Lanka  
 Applicant for the Adventure Club Recruitment Assignment
-
